@@ -1,8 +1,8 @@
 package main
 
 func Sum(nums []int) (sum int) {
-	for _, i := range nums {
-		sum += i
+	for _, number := range nums {
+		sum += number
 	}
 	return sum
 }
