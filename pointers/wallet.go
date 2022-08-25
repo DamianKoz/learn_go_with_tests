@@ -1,13 +1,21 @@
 package main
 
-type Wallet struct {
-	balance int
+import "fmt"
+
+type Bitcoin int
+
+func (b Bitcoin) String() string {
+	return fmt.Sprintf("%d BTC", b)
 }
 
-func (w Wallet) Deposit(to_deposit int) {
+type Wallet struct {
+	balance Bitcoin
+}
+
+func (w *Wallet) Deposit(to_deposit Bitcoin) {
 	w.balance += to_deposit
 }
 
-func (w Wallet) Balance() int {
+func (w *Wallet) Balance() Bitcoin {
 	return w.balance
 }
